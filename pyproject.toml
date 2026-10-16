@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ciphercracker"
+version = "0.1.0"
+description = "Automated classical-cipher cryptanalysis: detects the cipher, recovers the key, and scores confidence."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+ciphercracker = "ciphercracker.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ciphercracker*"]
+
+[tool.setuptools.package-data]
+ciphercracker = ["data/*.txt"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
